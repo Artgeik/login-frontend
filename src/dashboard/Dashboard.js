@@ -2,19 +2,18 @@ import React, { useEffect } from "react";
 import wlcm from "./wlcm.gif";
 import TheLabel from "../reusables/TheLabel";
 import { useNavigate } from "react-router-dom";
-import { authAction } from "../store/actions/authAction";
 import { connect } from "react-redux";
 
 const Dashboard = ({userDetails}) => {
   const navigate = useNavigate();
-  useEffect(()=>{
+  useEffect((userDetails,navigate)=>{
     setTimeout(() => {
-      if(userDetails.dashboard==false){
+      if(userDetails.dashboard===false){
         navigate("/login");
       }
       console.log('Delayed function executed');
     }, 200);
-  },[userDetails])
+  },[])
   return (
     <div
       style={{
@@ -29,7 +28,7 @@ const Dashboard = ({userDetails}) => {
     >
       <TheLabel style={{marginBottom:"80px"}} title={"you've successfully logged in"}/>
       <div style={{border:"2px solid black" }}>
-      <img src={wlcm}/>
+      <img alt={"welcome image"} src={wlcm}/>
       </div>
     </div>
   );
