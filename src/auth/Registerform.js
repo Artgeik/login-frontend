@@ -23,7 +23,7 @@ const Registerform = (props) => {
                 <Label title={"Age"} variant={"h5"}/>
                 <DTextField updateState={updateAge} type="number" min={"18"} max={"90"} hint={"Enter your age here eg 18"}/>
                 <Button handle={handleRegister} label={"Note it down"} sty={{marginLeft:"230px",marginTop:"10px"}}/>
-                <div style={{display:"flex",flexDirection:"row",marginLeft:"200px",marginTop:"8px"}}><Label style={{paddingRight:"5px"}} title={"Already registered?  "}/><a onClick={goToLogin}><b style={{cursor:"pointer"}}>Log In</b></a></div>
+                <div style={{display:"flex",flexDirection:"row",marginLeft:"200px",marginTop:"8px"}}><Label style={{paddingRight:"5px"}} title={"Already registered?  "}/><div onClick={goToLogin}><b style={{cursor:"pointer"}}>Log In</b></div></div>
             </form>
         </div>
     );
