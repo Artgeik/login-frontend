@@ -20,7 +20,7 @@ const TheForm = (props) => {
                 <Label title={"Password"} variant={"h5"}/>
                 <DTextField updateState={updatePassword} type={"password"} hint={"Enter your password here"}/>
                 <Button handle={handleLogin} label={"Let me in"} sty={{marginLeft:"240px",marginTop:"10px"}}/>
-                <div style={{display:"flex",flexDirection:"row",marginLeft:"200px",marginTop:"8px"}}><Label style={{paddingRight:"5px"}} title={"Not Registered Yet?  "}/><a onClick={goToRegister}><b style={{cursor:"pointer"}}>Sign Up</b></a></div>
+                <div style={{display:"flex",flexDirection:"row",marginLeft:"200px",marginTop:"8px"}}><Label style={{paddingRight:"5px"}} title={"Not Registered Yet?  "}/><div onClick={goToRegister}><b style={{cursor:"pointer"}}>Sign Up</b></div></div>
             </form>
         </div>
     );
