@@ -6,14 +6,14 @@ import { connect } from "react-redux";
 
 const Dashboard = ({userDetails}) => {
   const navigate = useNavigate();
-  useEffect((userDetails,navigate)=>{
+  useEffect(()=>{
     setTimeout(() => {
       if(userDetails.dashboard===false){
         navigate("/login");
       }
       console.log('Delayed function executed');
     }, 200);
-  },[])
+  },[userDetails,navigate])
   return (
     <div
       style={{
@@ -28,7 +28,7 @@ const Dashboard = ({userDetails}) => {
     >
       <TheLabel style={{marginBottom:"80px"}} title={"you've successfully logged in"}/>
       <div style={{border:"2px solid black" }}>
-      <img alt={"welcome image"} src={wlcm}/>
+      <img alt={"welcome"} src={wlcm}/>
       </div>
     </div>
   );
