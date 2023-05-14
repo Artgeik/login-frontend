@@ -26,7 +26,7 @@ const login=(userDetails,navigate)=>{
     return async (dispatch) =>{
         const response = await api.login(userDetails);
         console.log(response);
-        if(response.error){
+        if(response.error===true || response.error==="true"){
             console.log(response);
             dispatch(setAlertDetails("error",true,response?.exception?.response?.data));
         }else{
@@ -42,7 +42,7 @@ const register =(userDetails,navigate)=>{
     return async (dispatch) =>{
         const response = await api.register(userDetails);
         console.log(response);
-        if(response.error){
+        if(response.error || response.error=="true"){
             console.log(response);
             dispatch(setAlertDetails("error",true,response?.exception?.response?.data));
         }else{
