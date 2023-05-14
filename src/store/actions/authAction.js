@@ -42,7 +42,7 @@ const register =(userDetails,navigate)=>{
     return async (dispatch) =>{
         const response = await api.register(userDetails);
         console.log(response);
-        if(response.error || response.error=="true"){
+        if(response.error || response.error==="true"){
             console.log(response);
             dispatch(setAlertDetails("error",true,response?.exception?.response?.data));
         }else{
