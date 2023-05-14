@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiClient = axios.create({
     baseURL:'https://login-backend-gdgg.onrender.com/',
-    timeout:2000
+    timeout:4000
 });
 
 export const login = async(data)=>{
