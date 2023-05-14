@@ -25,10 +25,13 @@ const setUserDetails=(userDetails)=>{
 const login=(userDetails,navigate)=>{
     return async (dispatch) =>{
         const response = await api.login(userDetails);
-        console.log(response);
-        if(response.error===true || response.error==="true"){
-            console.log(response);
-            dispatch(setAlertDetails("error",true,response?.exception?.response?.data));
+        console.log(response,"this was actual response");
+        if(response.error===true || response.data.error===true){
+            if(response.error===true){
+                dispatch(setAlertDetails("error",true,response?.exception?.response?.data));    
+            }else{
+                dispatch(setAlertDetails("error",true,response?.data?.exception?.response?.data));
+            }            
         }else{
             const useDet = response?.data;
             console.log(useDet);
@@ -41,8 +44,8 @@ const login=(userDetails,navigate)=>{
 const register =(userDetails,navigate)=>{
     return async (dispatch) =>{
         const response = await api.register(userDetails);
-        console.log(response);
-        if(response.error || response.error==="true"){
+        console.log(response,);
+        if(response.error){
             console.log(response);
             dispatch(setAlertDetails("error",true,response?.exception?.response?.data));
         }else{
@@ -52,4 +55,4 @@ const register =(userDetails,navigate)=>{
             navigate('/dashboard');
         }
     }
-}
+};
