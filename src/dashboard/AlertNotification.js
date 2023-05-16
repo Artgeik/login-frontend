@@ -9,7 +9,7 @@ const AlertNotification = (props) => {
         setAlertDetails("info",false,"");
     };
     return (
-        <Snackbar anchorOrigin={{vertical:"bottom",horizontal:"center"}} open={open} autoHideDuration={4000} onClose={handleClose}>
+        <Snackbar anchorOrigin={{vertical:"bottom",horizontal:"center"}} open={open} autoHideDuration={7000} onClose={handleClose}>
             <Alert severity={severity}>{alertMessageContent}</Alert>
         </Snackbar>
     );
